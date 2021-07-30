@@ -14,8 +14,7 @@ WHERE g.name = 'Rock' OR g.name = 'Pop'
 GROUP BY g.genre_id;
 
 --Question
-SELECT ar.name, count(al.album_id)
-FROM artist ar
+SELECT ar.name, COUNT(*) FROM artist ar
 JOIN album al
-ON ar.album = t.album_id
-GROUP BY al.album_id
+ON ar.artist_id = al.artist_id
+GROUP BY ar.name;
